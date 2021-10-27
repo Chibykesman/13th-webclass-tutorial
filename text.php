@@ -5,67 +5,35 @@
 
 
 
-<div class="container">
-    <div class="col-sm-12 col-md-12 col-lg-6 offset-md-3 mt-4">
-        <div class="card">
-            <div class="card-title"><p class="card-header">Php Exercise</p></div>
-            <div class="card-body">
-                <?php
-                    require_once("config/connect.php");
-                    if(isset($_POST["submit"])){
-                            // @$fnum = $_POST["num1"];
-                        // @$snum = $_POST["num2"];
-                        // $sum = $fnum+$snum;
-                        // echo $sum;
+<div class="container mt-4">
+   <div id="logcard" class="col-sm-12 col-lg-4 col-md-12 offset-lg-4">
+    <div class="card">
+        <div class="card-body">
+            <h4>User Login</h4>
 
-                        
-                        @$user = strtoupper( $_POST["username"]);
-
-                        $userupper= strtoupper($user); echo "<br>";
-    
-                        $usercount = strlen($user);
-                        //(strlen($user)<=7)
-                        echo $user . " ". $usercount; 
-    
-                        //checking for username or password length in php
-                    
-                        echo"<br>";
-    
-                        //checking if field is empty on php
-                        if(empty($user)){
-                            echo "sorry username need to be fill up";
-                        }else{
-                            if($usercount <=7){
-                                echo "username should be at least 8 character in length";
-                            }
-                            else{
-                                echo"username length okey"; 
-                            }
-                        }
-
-                        if(is_numeric($user)){
-                            echo "NUMERIC";
-                        }
-
-
-                      
-                    }
-
-                ?>
-                <form action="" method="POST">
-                    <div class="form-group">
-                        <input type="text" name="username" id="" class="form-control">
-                        <label for="" class="form-label">Num1</label>
-                    </div>
-                    <!-- <div class="form-group">
-                        <input type="text" name="num2" id="" class="form-control" required>
-                        <label for="" class="form-label">Num2</label>
-                    </div> -->
+            <div class="form-group p-2">
+                <input type="text" name="" id="" class="form-control" placeholder="Username">
             </div>
-            <div class="card-footer"><button type="submit"name="submit" class="btn btn-secondary btn-block">Submit</button></div>
-                </form>
+            <div class="form-group p-2">
+                <input type="text" name="" id="" class="form-control" placeholder="Username">
+            </div>
+
+            <button class="btn">Login</button>
+
+            <p>New user ? <span><a href="#" id="reg">Register</a></span></p>
         </div>
     </div>
+   </div>
+
+   <div  class="col-sm-12 col-lg-4 col-md-12 offset-lg-4 mt-4">
+        <div class="card" id="createcard">
+            <div class="card-body">
+                <h4>Create New Account</h4>
+                <button class="btn">create</button>
+            </div>
+        </div>
+   </div>
+
 </div>
 
 
@@ -73,4 +41,17 @@
 
 
 
+
+
 <?php require "inc/close.php"; ?>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#createcard").hide();
+    });
+
+    $('#reg').click( function(){
+        $('#logcard').fadeOut('fast');
+        $('#createcard').fadeIn();
+    })
+</script>

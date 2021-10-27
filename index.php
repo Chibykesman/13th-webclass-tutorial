@@ -9,32 +9,36 @@
                     <div class="col-sm-12 col-md-12 col-lg-8 mt-4 text-white">
                         <h1 class="text-white">Patient Management System</h1>
                         <i>Managing Patient Digital</i> <br> 
-                        <a href="#" class="btn btn-success">Get Started</a>
+                        <a href="#" class="btn btn-success" id="cl">Get Started</a>
                     </div>
-                    <div class="col-sm-12 col-md-12 col-lg-4 mt-4">
+                    <div class="col-sm-12 col-md-12 col-lg-4 mt-4" id="logcard">
                             <div class="card">
                                 <div class="card-title">
                                     <p class="card-header">Login</p>
                                 </div>
                                 <div class="card-body">
+                                <p class="text-danger" id="uerror"></p>
                                     <p class="text-center">
                                         <i class="fa fa-user-circle fa-3x"></i>
                                     </p>
-                                    <form>
-                                        <div class="form-outline">
-                                            <input type="text" class="form-control">
+                                    <form method="post" id="loginform">
+                                        <div class="form-outline" >
+                                            <input type="text" class="form-control" name="user" id="user">
                                             <label class="form-label">
                                                 Username
                                             </label>
+                                            
                                         </div>
+                                        <small class="sm"></small>
                                         <div class="form-outline mt-4">
                                                 <input type="password" class="form-control">
                                                 <label class="form-label">
                                                     Password
                                                 </label>
                                             </div>
+                                            <small id="psm" class=""></small>
                                             <div class="form-outline mt-4">
-                                                   <button type="submit" class="btn btn-outline-success btn-block"> 
+                                                   <button type="submit" class="btn btn-outline-success btn-block" id="clckaction"> 
                                                        Login
                                                    </button>
                                                 </div>
@@ -179,4 +183,9 @@
   </div>
 </div>
 
-<?php require "inc/close.php"; ?>
+
+
+<?php 
+
+require "inc/close.php"; ?>
+<script src="script/app.js" ></script>
